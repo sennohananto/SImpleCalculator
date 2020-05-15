@@ -9,31 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var height: UITextField!
-    @IBOutlet weak var width: UITextField!
-    @IBOutlet weak var result: UILabel!
+    @IBOutlet weak var fieldPanjang: UITextField!
+    @IBOutlet weak var fieldLebar: UITextField!
+    @IBOutlet weak var textHasil: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-    @IBAction func calculateArea(_ sender: UIButton) {
-        if let h = Double(height.text ?? "0"), let w = Double(width.text ?? "0"){
-            result.text = String(h*w)
+    @IBAction func btnHitungOnclick(_ sender: UIButton) {
+        if let lebar = Double(fieldLebar.text ?? "0"), let panjang = Double(fieldPanjang.text ?? "0"){
+            textHasil.text = String(panjang * lebar)
         }else{
-            result.text = "Hasil tidak valid"
+            textHasil.text = "Field masih kosong"
         }
-        
     }
-    
-    @IBAction func resetView(_ sender: Any) {
-        result.text = ""
-        height.text = ""
-        width.text = ""
-        
-    }
-    
-
 }
 
